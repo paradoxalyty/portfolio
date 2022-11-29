@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "mobile";
 
 * {
     box-sizing: border-box;
@@ -66,9 +67,11 @@ main {
         }
     }
 
+    // Replace id with class
     &#home {
         overflow: hidden;
 
+        //Check and correct the value
         h1 {
             margin-top: 20vh;
         }
