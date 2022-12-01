@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+        "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+        "deploy": "gh-pages -d dist"
     },
     "repository": {
         "type": "git",
@@ -15,8 +16,9 @@
     "bugs": {
         "url": "https://github.com/paradoxalyty/portfolio/issues"
     },
-    "homepage": "https://github.com/paradoxalyty/portfolio#readme",
+    "homepage": "https://paradoxalyty.github.io/portfolio",
     "dependencies": {
+        "gh-pages": "^4.0.0",
         "node-sass": "^8.0.0"
     }
 }
