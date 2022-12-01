@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 
 * {
     box-sizing: border-box;
@@ -15,8 +14,6 @@ body {
     font-family: "Segoe UI", Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5;
 }
-
-// Headings
 
 h1,
 h2,
@@ -77,3 +74,46 @@ main {
         }
     }
 }
+
+.projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        width: 100%;
+        border: 3px solid #fff;
+
+        &:hover {
+            opacity: 0.5;
+            border: 3px solid $secondary-color;
+            @include easeOut;
+        }
+    }
+
+    .btn {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: 0;
+        margin-bottom: 0.3rem;
+
+        &:hover {
+            color: set-text-color($primary-color);
+            background: $secondary-color;
+        }
+    }
+
+    .btn-dark {
+        @extend .btn;
+        background: darken($primary-color, 50);
+        color: #fff;
+    }
+
+    .btn-light {
+        @extend .btn;
+        background: lighten($primary-color, 50);
+        color: #333;
+    }
+}
+
+@import "mobile";
