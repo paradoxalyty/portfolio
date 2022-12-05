@@ -1,20 +1,52 @@
 @include mediaXl {
+    main {
+        &.contact {
+            .sm-heading {
+                margin-bottom: 6rem;
+            }
+        }
+    }
+
     .projects {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @include mediaLg {
+    main {
+        &.contact {
+            .sm-heading {
+                margin-bottom: 5rem;
+            }
+        }
+    }
 }
 
 @include mediaMd {
     main {
         align-items: center;
+        padding: 3rem;
         text-align: center;
 
+        &.home,
+        &.contact {
+            .lg-heading {
+                margin-top: 10vh;
+            }
+
+            .sm-heading {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &.work .lg-heading {
+            margin-top: 2vh;
+        }
+
         .lg-heading {
+            margin-bottom: 1.5rem;
+            font-size: 4.8rem;
             line-height: 1;
-            margin-bottom: 1rem;
         }
     }
 
@@ -23,16 +55,12 @@
         float: none;
         width: 100%;
         min-height: 0;
-
-        /* .show {
-            transform: translate3d(0, 0, 0);
-        } */
     }
 
     .menu-nav {
         height: 75vh;
-        transform: translate3d(-100%, 0, 0);
         font-size: 24px;
+        transform: translate3d(-100%, 0, 0);
     }
 
     .menu-branding {
@@ -49,16 +77,47 @@
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .boxes > a,
+    .boxes > div {
+        margin-bottom: 2rem;
+        border-width: 2px;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
 }
 
 @include mediaSm {
-    // Replace id with class
-    //Check and correct the value
-    main#home h1 {
-        margin-top: 10vh;
+    main {
+        padding: 1.5rem;
+
+        &.home .lg-heading,
+        &.contact .lg-heading {
+            margin-top: 10vh;
+        }
+
+        &.work .lg-heading {
+            margin-top: 5vh;
+        }
+
+        .lg-heading {
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .sm-heading {
+            font-size: 1rem;
+        }
     }
 
     .projects {
         grid-template-columns: 1fr;
+    }
+
+    .boxes > a,
+    .boxes > div {
+        border-width: 1px;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
     }
 }

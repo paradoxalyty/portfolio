@@ -1,5 +1,8 @@
 $primary-color: rgb(46, 43, 43);
 $secondary-color: #eece1a;
+$white: #fff;
+$black: #000;
+$grey: #333;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
@@ -17,14 +20,14 @@ $background-opacity: 0.9;
             background-size: cover;
 
             &:after {
-                content: "";
                 position: fixed;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                z-index: -1;
                 background: rgba($primary-color, $background-opacity);
+                z-index: -1;
+                content: "";
             }
         }
     }
@@ -33,9 +36,9 @@ $background-opacity: 0.9;
 // Set Text Color
 @function set-text-color($color) {
     @if (lightness($color) > 40) {
-        @return #000;
+        @return $black;
     } @else {
-        @return #fff;
+        @return $white;
     }
 }
 
