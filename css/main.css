@@ -118,19 +118,16 @@ body {
       content: ""; }
 
 h1,
-h2,
-h3 {
+h2 {
   margin: 0;
   font-weight: 400; }
   h1.lg-heading,
-  h2.lg-heading,
-  h3.lg-heading {
+  h2.lg-heading {
     margin-bottom: 2rem;
     line-height: 1.1;
     font-size: 6rem; }
   h1.sm-heading,
-  h2.sm-heading,
-  h3.sm-heading {
+  h2.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(51, 48, 48, 0.5); }
@@ -159,7 +156,7 @@ main {
         transition: all 0.5s ease-out; }
   main.home {
     overflow: hidden; }
-    main.home h1 {
+    main.home .lg-heading {
       margin-top: 20vh; }
 
 .projects {
@@ -190,35 +187,54 @@ main {
 
 .boxes {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 1rem; }
+  .boxes a,
   .boxes div {
     margin-bottom: 3rem;
     border: 3px solid #fff;
     padding: 1.5rem 2.5rem;
     font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
     transition: all 0.5s ease-out; }
+    .boxes a span,
+    .boxes div span {
+      transition: all 0.5s ease-out; }
+    .boxes a:hover,
     .boxes div:hover {
-      padding: 0.5rem 1.5rem;
       color: #000;
       background: #eece1a; }
+      .boxes a:hover span,
       .boxes div:hover span {
         color: #000; }
 
 @media screen and (min-width: 1171px) {
+  main.contact .sm-heading {
+    margin-bottom: 6rem; }
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main.contact .sm-heading {
+    margin-bottom: 5rem; } }
 
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     padding: 3rem;
     text-align: center; }
+    main.home .lg-heading, main.contact .lg-heading {
+      margin-top: 10vh; }
+    main.home .sm-heading, main.contact .sm-heading {
+      margin-bottom: 4rem; }
+    main.work .lg-heading {
+      margin-top: 2vh; }
     main .lg-heading {
       margin-bottom: 1.5rem;
-      font-size: 5rem;
+      font-size: 4.8rem;
       line-height: 1; }
   .menu-nav, .menu-branding {
     float: none;
@@ -236,15 +252,20 @@ main {
       height: 150px;
       background: url("../img/portrait_small.jpg"); }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .boxes > a,
+  .boxes > div {
+    margin-bottom: 2rem;
+    border-width: 2px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem; } }
 
 @media screen and (max-width: 500px) {
   main {
     padding: 1.5rem; }
-    main.home h1 {
+    main.home .lg-heading, main.contact .lg-heading {
       margin-top: 10vh; }
-    main.contact h1,
-    main.work h1 {
+    main.work .lg-heading {
       margin-top: 5vh; }
     main .lg-heading {
       margin-bottom: 1.5rem;
@@ -253,7 +274,8 @@ main {
       font-size: 1rem; }
   .projects {
     grid-template-columns: 1fr; }
+  .boxes > a,
   .boxes > div {
-    border: 1px solid #fff;
+    border-width: 1px;
     padding: 0.3rem 0.5rem;
     font-size: 0.8rem; } }
