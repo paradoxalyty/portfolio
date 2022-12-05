@@ -38,10 +38,10 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    float: left;
     width: 50%;
     height: 100vh;
     overflow: hidden;
+    float: left;
     transition: all 0.5s ease-out; }
     .menu-nav.show, .menu-branding.show {
       transform: translate3d(0, 0, 0); }
@@ -50,12 +50,7 @@
     padding: 0;
     background: #211f1f;
     list-style: none;
-    transform: translate3d(0, -100%, 0);
-    /*         @include easeOut;
-
-        &.show {
-            transform: translate3d(0, 0, 0);
-        } */ }
+    transform: translate3d(0, -100%, 0); }
     .menu-nav .nav-item {
       transform: translate3d(600px, 0, 0);
       transition: all 0.5s ease-out; }
@@ -77,18 +72,13 @@
         color: #eece1a; }
   .menu-branding {
     background: #2e2b2b;
-    transform: translate3d(0, 100%, 0);
-    /*         @include easeOut;
-
-        &.show {
-            transform: translate3d(0, 0, 0);
-        } */ }
+    transform: translate3d(0, 100%, 0); }
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.jpg");
       border: solid 3px #eece1a;
-      border-radius: 50%; }
+      border-radius: 50%;
+      background: url("../img/portrait.jpg"); }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -106,10 +96,10 @@
   box-sizing: border-box; }
 
 body {
-  background: #2e2b2b;
-  color: #fff;
   height: 100%;
   margin: 0;
+  color: #fff;
+  background: #2e2b2b;
   font-family: "Segoe UI", Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5; }
   body#bg-img {
@@ -118,14 +108,14 @@ body {
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
-      content: "";
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      background: rgba(46, 43, 43, 0.9);
       z-index: -1;
-      background: rgba(46, 43, 43, 0.9); }
+      content: ""; }
 
 h1,
 h2,
@@ -135,6 +125,8 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
+    margin-bottom: 2rem;
+    line-height: 1.1;
     font-size: 6rem; }
   h1.sm-heading,
   h2.sm-heading,
@@ -149,15 +141,15 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;
-  width: 100%; }
+  width: 100%;
+  z-index: 2; }
 
 .text-secondary {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
-  height: 100%; }
+  height: 100%;
+  padding: 4rem; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -165,9 +157,9 @@ main {
       main .icons a:hover {
         color: #eece1a;
         transition: all 0.5s ease-out; }
-  main#home {
+  main.home {
     overflow: hidden; }
-    main#home h1 {
+    main.home h1 {
       margin-top: 20vh; }
 
 .projects {
@@ -178,14 +170,14 @@ main {
     width: 100%;
     border: 3px solid #fff; }
     .projects img:hover {
-      opacity: 0.5;
       border: 3px solid #eece1a;
+      opacity: 0.5;
       transition: all 0.5s ease-out; }
   .projects .btn, .projects .btn-dark, .projects .btn-light {
     display: block;
-    padding: 0.5rem 1rem;
+    margin-bottom: 0.3rem;
     border: 0;
-    margin-bottom: 0.3rem; }
+    padding: 0.5rem 1rem; }
     .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
       color: #fff;
       background: #eece1a; }
@@ -203,10 +195,10 @@ main {
   align-items: center;
   margin-top: 1rem; }
   .boxes div {
-    font-size: 2rem;
+    margin-bottom: 3rem;
     border: 3px solid #fff;
     padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
@@ -222,21 +214,20 @@ main {
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
+    padding: 3rem;
     text-align: center; }
     main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
+      margin-bottom: 1.5rem;
+      font-size: 5rem;
+      line-height: 1; }
   .menu-nav, .menu-branding {
     float: none;
     width: 100%;
-    min-height: 0;
-    /* .show {
-            transform: translate3d(0, 0, 0);
-        } */ }
+    min-height: 0; }
   .menu-nav {
     height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
+    font-size: 24px;
+    transform: translate3d(-100%, 0, 0); }
   .menu-branding {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
@@ -248,7 +239,21 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main {
+    padding: 1.5rem; }
+    main.home h1 {
+      margin-top: 10vh; }
+    main.contact h1,
+    main.work h1 {
+      margin-top: 5vh; }
+    main .lg-heading {
+      margin-bottom: 1.5rem;
+      font-size: 3rem; }
+    main .sm-heading {
+      font-size: 1rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .boxes > div {
+    border: 1px solid #fff;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem; } }
