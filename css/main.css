@@ -9,13 +9,13 @@
   right: 35px;
   z-index: 3;
   cursor: pointer;
-  transition: all 0.5s ease-out; }
+  transition: all 0.6s ease-in-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-in-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -42,7 +42,7 @@
     height: 100vh;
     overflow: hidden;
     float: left;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-in-out; }
     .menu-nav.show, .menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
@@ -53,7 +53,7 @@
     transform: translate3d(0, -100%, 0); }
     .menu-nav .nav-item {
       transform: translate3d(600px, 0, 0);
-      transition: all 0.5s ease-out; }
+      transition: all 0.6s ease-in-out; }
       .menu-nav .nav-item.show {
         transform: translate3d(0, 0, 0); }
       .menu-nav .nav-item.current > a {
@@ -67,7 +67,7 @@
       font-weight: 300px;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.5s ease-out; }
+      transition: all 0.6s ease-in-out; }
       .menu-nav .nav-link:hover {
         color: #eece1a; }
   .menu-branding {
@@ -153,7 +153,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #eece1a;
-        transition: all 0.5s ease-out; }
+        transition: all 0.6s ease-in-out; }
   main.home {
     overflow: hidden; }
     main.home .lg-heading {
@@ -163,27 +163,74 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
-    width: 100%;
-    border: 3px solid #fff; }
-    .projects img:hover {
-      border: 3px solid #eece1a;
-      opacity: 0.5;
-      transition: all 0.5s ease-out; }
-  .projects .btn, .projects .btn-dark, .projects .btn-light {
-    display: block;
-    margin-bottom: 0.3rem;
-    border: 0;
-    padding: 0.5rem 1rem; }
-    .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
-      color: #fff;
-      background: #eece1a; }
-  .projects .btn-dark {
-    background: black;
-    color: #fff; }
-  .projects .btn-light {
-    background: #afa9a9;
-    color: #333; }
+  .projects .project {
+    position: relative;
+    border: 3px solid #fff;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out; }
+    .projects .project .surprise {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10; }
+      .projects .project .surprise .btn, .projects .project .surprise .btn-light, .projects .project .surprise .btn-dark {
+        width: 55%;
+        padding: 0.3rem 0.5rem;
+        border: 0;
+        border-radius: 0.5rem;
+        margin: 0 0 1rem 0;
+        text-align: center; }
+        .projects .project .surprise .btn i, .projects .project .surprise .btn-light i, .projects .project .surprise .btn-dark i {
+          margin: 0 0.5rem 0 0; }
+      .projects .project .surprise .btn-light {
+        color: #000;
+        background: #afa9a9; }
+        .projects .project .surprise .btn-light:hover {
+          color: #fff;
+          background: #eece1a; }
+        .projects .project .surprise .btn-light:active {
+          color: #000; }
+      .projects .project .surprise .btn-dark {
+        color: #fff;
+        background: black; }
+        .projects .project .surprise .btn-dark:hover {
+          color: #000;
+          background: #eece1a; }
+        .projects .project .surprise .btn-dark:active {
+          color: #fff; }
+    .projects .project img {
+      display: block;
+      width: 100%;
+      object-fit: fill;
+      transition: all 0.6s ease-in-out; }
+    .projects .project p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+      color: #000;
+      background: #afa9a9;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: all 0.6s ease-in-out; }
+    .projects .project:hover, .projects .project:focus {
+      border: 3px solid #eece1a; }
+      .projects .project:hover .surprise, .projects .project:focus .surprise {
+        visibility: visible; }
+      .projects .project:hover img, .projects .project:focus img {
+        transform: scale(1.2);
+        opacity: 0.2;
+        transition: all 0.6s ease-in-out; }
+      .projects .project:hover p, .projects .project:focus p {
+        visibility: visible;
+        transform: translate(0, 0); }
 
 .boxes {
   display: flex;
@@ -199,10 +246,10 @@ main {
     font-size: 2rem;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-in-out; }
     .boxes a span,
     .boxes div span {
-      transition: all 0.5s ease-out; }
+      transition: all 0.6s ease-in-out; }
     .boxes a:hover,
     .boxes div:hover {
       color: #000;
