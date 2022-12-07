@@ -186,12 +186,14 @@ main {
         border: 0;
         border-radius: 0.5rem;
         margin: 0 0 1rem 0;
-        text-align: center; }
+        text-align: center;
+        transition: all 0.6s ease-in-out; }
         .projects .project .surprise .btn i, .projects .project .surprise .btn-light i, .projects .project .surprise .btn-dark i {
           margin: 0 0.5rem 0 0; }
       .projects .project .surprise .btn-light {
         color: #000;
-        background: #afa9a9; }
+        background: #afa9a9;
+        transform: translateX(-200%); }
         .projects .project .surprise .btn-light:hover {
           color: #fff;
           background: #eece1a; }
@@ -199,7 +201,8 @@ main {
           color: #000; }
       .projects .project .surprise .btn-dark {
         color: #fff;
-        background: black; }
+        background: black;
+        transform: translateX(200%); }
         .projects .project .surprise .btn-dark:hover {
           color: #000;
           background: #eece1a; }
@@ -226,6 +229,10 @@ main {
       border: 3px solid #eece1a; }
       .projects .project:hover .surprise, .projects .project:focus .surprise {
         visibility: visible; }
+      .projects .project:hover .btn-light,
+      .projects .project:hover .btn-dark, .projects .project:focus .btn-light,
+      .projects .project:focus .btn-dark {
+        transform: translateX(0); }
       .projects .project:hover img, .projects .project:focus img {
         transform: scale(1.2);
         opacity: 0.2;
