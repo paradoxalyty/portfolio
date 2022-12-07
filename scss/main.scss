@@ -60,7 +60,7 @@ main {
 
             &:hover {
                 color: $secondary-color;
-                @include easeOut();
+                @include easeInOut();
             }
         }
     }
@@ -79,46 +79,114 @@ main {
     grid-gap: 0.7rem;
     grid-template-columns: repeat(3, 1fr);
 
-    img {
-        width: 100%;
+    .project {
+        position: relative;
         border: 3px solid #fff;
+        overflow: hidden;
+        @include easeInOut;
 
-        &:hover {
+        .surprise {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            // visibility: hidden;
+            z-index: 10;
+
+            .btn {
+                width: 55%;
+                padding: 0.3rem 0.5rem;
+                border: 0;
+                border-radius: 0.5rem;
+                margin: 0 0 1rem 0;
+                text-align: center;
+
+                i {
+                    margin: 0 0.5rem 0 0;
+                }
+            }
+
+            .btn-light {
+                @extend .btn;
+                color: set-text-color($secondary-color);
+                background: lighten($primary-color, 50);
+
+                &:hover {
+                    color: set-text-color($primary-color);
+                    background: $secondary-color;
+                }
+
+                &:active {
+                    color: set-text-color($secondary-color);
+                }
+            }
+
+            .btn-dark {
+                @extend .btn;
+                color: set-text-color($primary-color);
+                background: darken($primary-color, 50);
+
+                &:hover {
+                    color: set-text-color($secondary-color);
+                    background: $secondary-color;
+                }
+
+                &:active {
+                    color: set-text-color($primary-color);
+                }
+            }
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: fill;
+            @include easeInOut;
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0.3rem 0.5rem;
+            color: set-text-color($secondary-color);
+            background: lighten($primary-color, 50);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            // transform: translate(0, 110%);
+            @include easeInOut;
+        }
+
+        &:hover,
+        &:focus {
             border: 3px solid $secondary-color;
-            opacity: 0.5;
-            @include easeOut;
+
+            .surprise {
+                visibility: visible;
+            }
+
+            img {
+                transform: scale(1.2);
+                opacity: 0.2;
+                @include easeInOut;
+            }
+
+            p {
+                visibility: visible;
+                transform: translate(0, 0);
+            }
         }
-    }
-
-    .btn {
-        display: block;
-        margin-bottom: 0.3rem;
-        border: 0;
-        padding: 0.5rem 1rem;
-
-        &:hover {
-            color: set-text-color($primary-color);
-            background: $secondary-color;
-        }
-    }
-
-    .btn-dark {
-        @extend .btn;
-        background: darken($primary-color, 50);
-        color: #fff;
-    }
-
-    .btn-light {
-        @extend .btn;
-        background: lighten($primary-color, 50);
-        color: #333;
     }
 }
 
 .boxes {
     display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-evenly;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -132,14 +200,13 @@ main {
         font-size: 2rem;
         text-decoration: none;
         cursor: pointer;
-        @include easeOut;
+        @include easeInOut;
 
         span {
-            @include easeOut;
+            @include easeInOut;
         }
 
         &:hover {
-            // padding: 0.5rem 1.5rem;
             color: set-text-color($secondary-color);
             background: $secondary-color;
 
